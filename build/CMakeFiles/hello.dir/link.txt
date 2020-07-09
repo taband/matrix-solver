@@ -1,0 +1,1 @@
+g++  -g  -rdynamic CMakeFiles/hello.dir/src/hello.cpp.o  -o hello 

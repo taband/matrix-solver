@@ -1,0 +1,81 @@
+1. [matrix.h] 벡터 타입 (vec x;)
+
+(1) x(n): 모든 성분이 0인 n차원 벡터 x 생성.
+
+(2) x.size: 벡터 x의 차원(dimension).
+
+(3) x[i]: 벡터 x의 i번째 성분.
+
+(4) x.zeros(): 벡터 x의 모든 성분을 0으로 변경.
+
+(5) x.print(): 벡터 x의 모든 성분을 순서대로 화면에 출력. 
+
+
+
+2. [matrix.h] 행렬 타입 (mat A;)
+
+(1) A(m,n): 모든 성분이 0인 m행 n열 행렬 A 생성.
+
+(2) A.row: 행렬 A의 행의 갯수.
+
+(3) A.col: 행렬 A의 열의 갯수.
+
+(4) A[i][j]: 행렬 A의 i행 j열 성분.
+
+(5) A.print(): 행렬 A의 모든 성분을 순서대로 화면에 출력.
+
+
+
+3. [matrix.h] 벡터의 기본 사칙연산
+
+(1) x = y: 벡터 x에 벡터 y를 대입 (즉, y의 size와 각 성분을 복사하여 x에 대입).
+
+(2) x + y: 벡터 x와 y의 덧셈 (vec 타입 변환). (단, 두 벡터의 차원은 같아야 함.)
+
+(3) x - y: 벡터 x와 y의 뺄셈 (vec 타입 변환). (단, 두 벡터의 차원은 같아야 함.)
+
+(4) x += y: 벡터 x + y를 x에 대입. (단, 두 벡터의 차원은 같아야 함.)
+
+(5) x -= y: 벡터 x - y를 x에 대입. (단, 두 벡터의 차원은 같아야 함.)
+
+(6) (x, y): 벡터 x와 y의 내적 (double 타입 변환). (단, 두 벡터의 차원은 같아야 함.)
+
+
+
+4. [matrix.h] 행렬의 기본 사칙연산
+
+(1) A = B: 행렬 A에 행렬 B를 대입 (즉, B의 row, col과 각 성분을 복사하여 A에 대입).
+
+(2) A + B: 행렬 A와 B의 덧셈 (mat 타입 반환). (단, 두 행렬의 크기는 같아야 함.)
+
+(3) A - B: 행렬 A와 B의 뺄셈 (mat 타입 반환). (단, 두 행렬의 크기는 같아야 함.)
+
+(4) A += B: 행렬 A + B를 A에 대입. (단, 두 행렬의 크기는 같아야 함.)
+
+(5) A -= B: 행렬 A - B를 A에 대입. (단, 두 행렬의 크기는 같아야 함.)
+
+(6) A * B: 행렬 A와 B의 곱셈 (mat 타입 반환). (단, A.col == A.row이어야 함.)
+
+(7) A * x: 행렬 A와 벡터 x의 곱셈 (vec 타입 반환). (단, A.col == x.size이어야 함.)
+
+(8) A.row_vector(i): 행렬 A의 i번째 행벡터 (vec 타입 반환).
+
+(9) A.col_vector(j): 행렬 A의 j번째 열벡터 (vec 타입 반환). 
+
+
+
+5. [linear_solver.h] n행 n열 행렬 A와 n차원 벡터 b에 대하여, 선형연립방정식 Ax = b의 해 x를 찾는 함수.
+
+(1) LINEAR_SOLVER::GE(A, x, b): 가우스소거법(Gaussian elimination)을 이용. (단, A의 모든 대각성분 (diagonal element)이 0이 아니어야 함.)
+
+(2) LINEAR_SOLVER::CG(A, x, b): 켤레기울기법(conjugate gradient method)을 이용. (단, A는 대칭 양부호(symmetric positive definite) 행렬이어야 함.)
+
+(3) LINEAR_SOLVER::JACOBI(A, x, b): 야코비 방법(Jacobi method)을 이용. (단, A의 모든 대각성분은 0이 아니어야 함.)
+
+(4) LINEAR_SOLVER::GAUSS_SEIDEL(A, x, b): 가우스-자이델 방법(Gauss-Seidel method)을 이용. (단, A의 모든 대각성분은 0이 아니어야 함.)
+
+
+
+6. [sparse.h] 희소벡터 (sparse vector)와 희소행렬 (sparse matrix) 클래스
+
+- 희소벡터와 희소행렬 클래스의 기본 연산이 정의되어 있습니다.

@@ -1,0 +1,3 @@
+/home/li/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/li/cpp/build/CMakeFiles/edit_cache.dir
+/home/li/cpp/build/CMakeFiles/hello.dir
